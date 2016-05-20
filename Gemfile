@@ -21,6 +21,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# to store environment variables
+gem 'figaro', '1.0'
 
 group :production do
   gem 'pg'
@@ -32,7 +34,6 @@ group :development do
   gem 'pry'
   gem 'sqlite3'
 end
-
 
 
 group :development, :test do
