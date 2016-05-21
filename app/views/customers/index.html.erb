@@ -1,2 +1,13 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <%= link_to "Back", new_customer_path %>
+    <h1 class="text-center">Customer List</h1>
+    <table class="table table-borderless table-nonfluid">
+      <% @customers.each do |customer| %>
+        <tr>
+          <td> <%= customer.email %> </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
