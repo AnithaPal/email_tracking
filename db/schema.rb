@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520142530) do
+ActiveRecord::Schema.define(version: 20160521110426) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sent_opened_emails", force: :cascade do |t|
+    t.string   "email"
+    t.string   "ip_address"
+    t.string   "opened"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
