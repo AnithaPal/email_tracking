@@ -14,16 +14,42 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls);
 
- .table th, .table td {
-     border-top: none !important;
-     border-style: none;
-     color: gray;
- }
+$font-family-main: 'Lora', serif;
+$font-family-headings: 'Gorditas', serif;
+$body-backgound: #F08080;
+$nav-background: #CD2626;
+$dark-gray-font: #2e3439;
+$font-color: #F7F7F7;
 
- .table-nonfluid {
-   width: auto !important;
-   margin: auto;
+.navbar-custom{
+  background-color: $nav-background;
+  border: transparant;
+  margin-bottom: 0px;
+  border: transparent;
+}
+body{
+  background-color: $body-backgound;
+  font-family: $font-family-main, sans-serif;
+  height:100%;
+  color: $font-color;
+  a{
+    color: $font-color;
+    font-size: 2rem;
+    font-family: $font-family-headings;
+  }
+
+   .table th, .table td {
+       border-top: none !important;
+       border-style: none;
+   }
+
+   .table-nonfluid {
+     width: auto !important;
+     margin: auto;
+  }
+
 }
