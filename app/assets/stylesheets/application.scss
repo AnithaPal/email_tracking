@@ -16,3 +16,14 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .table th, .table td {
+     border-top: none !important;
+     border-style: none;
+     color: gray;
+ }
+
+ .table-nonfluid {
+   width: auto !important;
+   margin: auto;
+}

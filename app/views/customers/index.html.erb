@@ -1,13 +1,25 @@
-<div class="row">
-  <div class="col-md-8">
-    <%= link_to "Back", new_customer_path %>
-    <h1 class="text-center">Customer List</h1>
-    <table class="table table-borderless table-nonfluid">
-      <% @customers.each do |customer| %>
-        <tr>
-          <td> <%= customer.email %> </td>
-        </tr>
-      <% end %>
-    </table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="text-center"> Opened Email </h1>
+      <table class="table table-borderless table-nonfluid">
+        <thead>
+          <tr>
+            <th> Email </th>
+            <th> IP Address </th>
+            <th> Time </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @opened_emails.each do |oe| %>
+          <tr>
+            <td> <%= oe.email %> </td>
+            <td> <%= oe.ip_address %> </td>
+            <td> <%= oe.opened %> </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

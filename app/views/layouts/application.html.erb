@@ -8,10 +8,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-
-<%= yield %>
-  </div>
+  <nav class="navbar navbar-default navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="#"> Email Tracker </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li > <%= link_to "Send Email", root_path %> </li>
+        <li> <%= link_to "DashBoard",  customers_path %> </li>
+      </ul>
+    </div>
+  </nav>
+  <div>
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash.now[:alert] %>
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash.now[:alert] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+    </div>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

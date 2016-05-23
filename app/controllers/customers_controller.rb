@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
 
   def index
     @customers = Customer.all
+    @opened_emails = SentOpenedEmail.all
   end
 
   def show
@@ -9,22 +10,21 @@ class CustomersController < ApplicationController
   end
 
   def new
+    @customers = Customer.all
     default_url_options[:host] = "localhost:3000"
     @customer = Customer.new
   end
-  #
-  # def edit
-  # end
-
+  
   def create
     default_url_options[:host] = "localhost:3000"
     @customer = Customer.new(customer_params)
 
     if @customer.save
       MarketingMailer.send_email(@customer).deliver_now
+      flash[:notice] = "Email has sent successfully"
       redirect_to customers_path
     else
-      redirect_to :back
+      flash[:error] = "Sorry, There was some an error sending an email. Please try again."
       render :new
     end
   end
