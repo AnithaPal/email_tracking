@@ -16,7 +16,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    # default_url_options[:host] = "email-tracker1.herokuapp.com"
+    default_url_options[:host] = "email-tracker1.herokuapp.com"
     @customer = Customer.new(customer_params)
 
     if @customer.save
