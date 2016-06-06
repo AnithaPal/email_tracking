@@ -9,6 +9,8 @@ module EmailTracker
 
       if req.path =~ /^\/email\/track\/(.+).png/
         details = Base64.decode64(Regexp.last_match[1])
+        puts "---------------------"
+        puts "details ---> #{details}"
         email = nil
 
         details.split('&').each do |kv|

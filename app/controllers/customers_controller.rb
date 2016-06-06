@@ -12,11 +12,13 @@ class CustomersController < ApplicationController
   def new
     @customers = Customer.all
     default_url_options[:host] = "email-tracker1.herokuapp.com"
+    # default_url_options[:host] = "localhost:3000"
     @customer = Customer.new
   end
 
   def create
     default_url_options[:host] = "email-tracker1.herokuapp.com"
+    # default_url_options[:host] = "localhost:3000"
     @customer = Customer.new(customer_params)
 
     if @customer.save

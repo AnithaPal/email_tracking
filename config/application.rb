@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require_relative '../lib/email_tracker/rack'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -17,6 +18,8 @@ Bundler.require(*Rails.groups)
 
 module EmailTracking
   class Application < Rails::Application
+    
+    config.middleware.use EmailTracker::Rack
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -33,3 +36,10 @@ module EmailTracking
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+# module App
+#   class Application < Rails::Application
+#     require Rails.root.join('lib', 'email_tracker', 'rack')
+#     config.middleware.use EmailTracker::Rack
+#   end
+# end

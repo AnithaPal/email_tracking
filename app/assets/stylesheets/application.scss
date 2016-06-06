@@ -24,6 +24,7 @@ $body-backgound: #F08080;
 $nav-background: #CD2626;
 $dark-gray-font: #2e3439;
 $font-color: #F7F7F7;
+$input_text_color: #000;
 
 .navbar-custom{
   background-color: $nav-background;
@@ -51,5 +52,7 @@ body{
      width: auto !important;
      margin: auto;
   }
-
+  input{
+    color: $input_text_color;
+  }
 }
